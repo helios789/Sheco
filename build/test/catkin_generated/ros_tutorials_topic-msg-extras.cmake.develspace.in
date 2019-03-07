@@ -1,0 +1,2 @@
+set(ros_tutorials_topic_MESSAGE_FILES "/home/helios789/catkin_ws/src/test/msg/MsgTutorial.msg")
+set(ros_tutorials_topic_SERVICE_FILES "")

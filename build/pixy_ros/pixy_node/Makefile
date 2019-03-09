@@ -66,28 +66,6 @@ list_install_components/fast: list_install_components
 
 .PHONY : list_install_components/fast
 
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: install/local
-
-.PHONY : install/local/fast
-
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: install/strip
-
-.PHONY : install/strip/fast
-
 # Special rule for the target test
 test:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
@@ -98,6 +76,17 @@ test:
 test/fast: test
 
 .PHONY : test/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: install/local
+
+.PHONY : install/local/fast
 
 # Special rule for the target rebuild_cache
 rebuild_cache:
@@ -133,6 +122,17 @@ install/fast: preinstall/fast
 	/usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: install/strip
+
+.PHONY : install/strip/fast
+
 # The main all target
 all: cmake_check_build_system
 	cd /home/helios789/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/helios789/catkin_ws/build/CMakeFiles /home/helios789/catkin_ws/build/pixy_ros/pixy_node/CMakeFiles/progress.marks
@@ -164,126 +164,6 @@ preinstall/fast:
 depend:
 	cd /home/helios789/catkin_ws/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
-
-# Convenience name for target.
-pixy_ros/pixy_node/CMakeFiles/pixy_sub.dir/rule:
-	cd /home/helios789/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 pixy_ros/pixy_node/CMakeFiles/pixy_sub.dir/rule
-.PHONY : pixy_ros/pixy_node/CMakeFiles/pixy_sub.dir/rule
-
-# Convenience name for target.
-pixy_sub: pixy_ros/pixy_node/CMakeFiles/pixy_sub.dir/rule
-
-.PHONY : pixy_sub
-
-# fast build rule for target.
-pixy_sub/fast:
-	cd /home/helios789/catkin_ws/build && $(MAKE) -f pixy_ros/pixy_node/CMakeFiles/pixy_sub.dir/build.make pixy_ros/pixy_node/CMakeFiles/pixy_sub.dir/build
-.PHONY : pixy_sub/fast
-
-# Convenience name for target.
-pixy_ros/pixy_node/CMakeFiles/pixy_node.dir/rule:
-	cd /home/helios789/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 pixy_ros/pixy_node/CMakeFiles/pixy_node.dir/rule
-.PHONY : pixy_ros/pixy_node/CMakeFiles/pixy_node.dir/rule
-
-# Convenience name for target.
-pixy_node: pixy_ros/pixy_node/CMakeFiles/pixy_node.dir/rule
-
-.PHONY : pixy_node
-
-# fast build rule for target.
-pixy_node/fast:
-	cd /home/helios789/catkin_ws/build && $(MAKE) -f pixy_ros/pixy_node/CMakeFiles/pixy_node.dir/build.make pixy_ros/pixy_node/CMakeFiles/pixy_node.dir/build
-.PHONY : pixy_node/fast
-
-# Convenience name for target.
-pixy_ros/pixy_node/CMakeFiles/pixy_node_generate_messages_py.dir/rule:
-	cd /home/helios789/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 pixy_ros/pixy_node/CMakeFiles/pixy_node_generate_messages_py.dir/rule
-.PHONY : pixy_ros/pixy_node/CMakeFiles/pixy_node_generate_messages_py.dir/rule
-
-# Convenience name for target.
-pixy_node_generate_messages_py: pixy_ros/pixy_node/CMakeFiles/pixy_node_generate_messages_py.dir/rule
-
-.PHONY : pixy_node_generate_messages_py
-
-# fast build rule for target.
-pixy_node_generate_messages_py/fast:
-	cd /home/helios789/catkin_ws/build && $(MAKE) -f pixy_ros/pixy_node/CMakeFiles/pixy_node_generate_messages_py.dir/build.make pixy_ros/pixy_node/CMakeFiles/pixy_node_generate_messages_py.dir/build
-.PHONY : pixy_node_generate_messages_py/fast
-
-# Convenience name for target.
-pixy_ros/pixy_node/CMakeFiles/pixy_node_genpy.dir/rule:
-	cd /home/helios789/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 pixy_ros/pixy_node/CMakeFiles/pixy_node_genpy.dir/rule
-.PHONY : pixy_ros/pixy_node/CMakeFiles/pixy_node_genpy.dir/rule
-
-# Convenience name for target.
-pixy_node_genpy: pixy_ros/pixy_node/CMakeFiles/pixy_node_genpy.dir/rule
-
-.PHONY : pixy_node_genpy
-
-# fast build rule for target.
-pixy_node_genpy/fast:
-	cd /home/helios789/catkin_ws/build && $(MAKE) -f pixy_ros/pixy_node/CMakeFiles/pixy_node_genpy.dir/build.make pixy_ros/pixy_node/CMakeFiles/pixy_node_genpy.dir/build
-.PHONY : pixy_node_genpy/fast
-
-# Convenience name for target.
-pixy_ros/pixy_node/CMakeFiles/pixy_node_gennodejs.dir/rule:
-	cd /home/helios789/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 pixy_ros/pixy_node/CMakeFiles/pixy_node_gennodejs.dir/rule
-.PHONY : pixy_ros/pixy_node/CMakeFiles/pixy_node_gennodejs.dir/rule
-
-# Convenience name for target.
-pixy_node_gennodejs: pixy_ros/pixy_node/CMakeFiles/pixy_node_gennodejs.dir/rule
-
-.PHONY : pixy_node_gennodejs
-
-# fast build rule for target.
-pixy_node_gennodejs/fast:
-	cd /home/helios789/catkin_ws/build && $(MAKE) -f pixy_ros/pixy_node/CMakeFiles/pixy_node_gennodejs.dir/build.make pixy_ros/pixy_node/CMakeFiles/pixy_node_gennodejs.dir/build
-.PHONY : pixy_node_gennodejs/fast
-
-# Convenience name for target.
-pixy_ros/pixy_node/CMakeFiles/pixy_node_generate_messages_lisp.dir/rule:
-	cd /home/helios789/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 pixy_ros/pixy_node/CMakeFiles/pixy_node_generate_messages_lisp.dir/rule
-.PHONY : pixy_ros/pixy_node/CMakeFiles/pixy_node_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-pixy_node_generate_messages_lisp: pixy_ros/pixy_node/CMakeFiles/pixy_node_generate_messages_lisp.dir/rule
-
-.PHONY : pixy_node_generate_messages_lisp
-
-# fast build rule for target.
-pixy_node_generate_messages_lisp/fast:
-	cd /home/helios789/catkin_ws/build && $(MAKE) -f pixy_ros/pixy_node/CMakeFiles/pixy_node_generate_messages_lisp.dir/build.make pixy_ros/pixy_node/CMakeFiles/pixy_node_generate_messages_lisp.dir/build
-.PHONY : pixy_node_generate_messages_lisp/fast
-
-# Convenience name for target.
-pixy_ros/pixy_node/CMakeFiles/pixy_node_geneus.dir/rule:
-	cd /home/helios789/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 pixy_ros/pixy_node/CMakeFiles/pixy_node_geneus.dir/rule
-.PHONY : pixy_ros/pixy_node/CMakeFiles/pixy_node_geneus.dir/rule
-
-# Convenience name for target.
-pixy_node_geneus: pixy_ros/pixy_node/CMakeFiles/pixy_node_geneus.dir/rule
-
-.PHONY : pixy_node_geneus
-
-# fast build rule for target.
-pixy_node_geneus/fast:
-	cd /home/helios789/catkin_ws/build && $(MAKE) -f pixy_ros/pixy_node/CMakeFiles/pixy_node_geneus.dir/build.make pixy_ros/pixy_node/CMakeFiles/pixy_node_geneus.dir/build
-.PHONY : pixy_node_geneus/fast
-
-# Convenience name for target.
-pixy_ros/pixy_node/CMakeFiles/pixy_node_gencpp.dir/rule:
-	cd /home/helios789/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 pixy_ros/pixy_node/CMakeFiles/pixy_node_gencpp.dir/rule
-.PHONY : pixy_ros/pixy_node/CMakeFiles/pixy_node_gencpp.dir/rule
-
-# Convenience name for target.
-pixy_node_gencpp: pixy_ros/pixy_node/CMakeFiles/pixy_node_gencpp.dir/rule
-
-.PHONY : pixy_node_gencpp
-
-# fast build rule for target.
-pixy_node_gencpp/fast:
-	cd /home/helios789/catkin_ws/build && $(MAKE) -f pixy_ros/pixy_node/CMakeFiles/pixy_node_gencpp.dir/build.make pixy_ros/pixy_node/CMakeFiles/pixy_node_gencpp.dir/build
-.PHONY : pixy_node_gencpp/fast
 
 # Convenience name for target.
 pixy_ros/pixy_node/CMakeFiles/actionlib_generate_messages_py.dir/rule:
@@ -406,21 +286,6 @@ tf_generate_messages_cpp/fast:
 .PHONY : tf_generate_messages_cpp/fast
 
 # Convenience name for target.
-pixy_ros/pixy_node/CMakeFiles/pixy_node_generate_messages_eus.dir/rule:
-	cd /home/helios789/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 pixy_ros/pixy_node/CMakeFiles/pixy_node_generate_messages_eus.dir/rule
-.PHONY : pixy_ros/pixy_node/CMakeFiles/pixy_node_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-pixy_node_generate_messages_eus: pixy_ros/pixy_node/CMakeFiles/pixy_node_generate_messages_eus.dir/rule
-
-.PHONY : pixy_node_generate_messages_eus
-
-# fast build rule for target.
-pixy_node_generate_messages_eus/fast:
-	cd /home/helios789/catkin_ws/build && $(MAKE) -f pixy_ros/pixy_node/CMakeFiles/pixy_node_generate_messages_eus.dir/build.make pixy_ros/pixy_node/CMakeFiles/pixy_node_generate_messages_eus.dir/build
-.PHONY : pixy_node_generate_messages_eus/fast
-
-# Convenience name for target.
 pixy_ros/pixy_node/CMakeFiles/tf_generate_messages_eus.dir/rule:
 	cd /home/helios789/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 pixy_ros/pixy_node/CMakeFiles/tf_generate_messages_eus.dir/rule
 .PHONY : pixy_ros/pixy_node/CMakeFiles/tf_generate_messages_eus.dir/rule
@@ -466,6 +331,21 @@ tf_generate_messages_nodejs/fast:
 .PHONY : tf_generate_messages_nodejs/fast
 
 # Convenience name for target.
+pixy_ros/pixy_node/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/rule:
+	cd /home/helios789/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 pixy_ros/pixy_node/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/rule
+.PHONY : pixy_ros/pixy_node/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+actionlib_msgs_generate_messages_eus: pixy_ros/pixy_node/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/rule
+
+.PHONY : actionlib_msgs_generate_messages_eus
+
+# fast build rule for target.
+actionlib_msgs_generate_messages_eus/fast:
+	cd /home/helios789/catkin_ws/build && $(MAKE) -f pixy_ros/pixy_node/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/build.make pixy_ros/pixy_node/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/build
+.PHONY : actionlib_msgs_generate_messages_eus/fast
+
+# Convenience name for target.
 pixy_ros/pixy_node/CMakeFiles/actionlib_generate_messages_cpp.dir/rule:
 	cd /home/helios789/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 pixy_ros/pixy_node/CMakeFiles/actionlib_generate_messages_cpp.dir/rule
 .PHONY : pixy_ros/pixy_node/CMakeFiles/actionlib_generate_messages_cpp.dir/rule
@@ -496,19 +376,19 @@ actionlib_msgs_generate_messages_nodejs/fast:
 .PHONY : actionlib_msgs_generate_messages_nodejs/fast
 
 # Convenience name for target.
-pixy_ros/pixy_node/CMakeFiles/pixy_node_generate_messages.dir/rule:
-	cd /home/helios789/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 pixy_ros/pixy_node/CMakeFiles/pixy_node_generate_messages.dir/rule
-.PHONY : pixy_ros/pixy_node/CMakeFiles/pixy_node_generate_messages.dir/rule
+pixy_ros/pixy_node/CMakeFiles/pixy_node.dir/rule:
+	cd /home/helios789/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 pixy_ros/pixy_node/CMakeFiles/pixy_node.dir/rule
+.PHONY : pixy_ros/pixy_node/CMakeFiles/pixy_node.dir/rule
 
 # Convenience name for target.
-pixy_node_generate_messages: pixy_ros/pixy_node/CMakeFiles/pixy_node_generate_messages.dir/rule
+pixy_node: pixy_ros/pixy_node/CMakeFiles/pixy_node.dir/rule
 
-.PHONY : pixy_node_generate_messages
+.PHONY : pixy_node
 
 # fast build rule for target.
-pixy_node_generate_messages/fast:
-	cd /home/helios789/catkin_ws/build && $(MAKE) -f pixy_ros/pixy_node/CMakeFiles/pixy_node_generate_messages.dir/build.make pixy_ros/pixy_node/CMakeFiles/pixy_node_generate_messages.dir/build
-.PHONY : pixy_node_generate_messages/fast
+pixy_node/fast:
+	cd /home/helios789/catkin_ws/build && $(MAKE) -f pixy_ros/pixy_node/CMakeFiles/pixy_node.dir/build.make pixy_ros/pixy_node/CMakeFiles/pixy_node.dir/build
+.PHONY : pixy_node/fast
 
 # Convenience name for target.
 pixy_ros/pixy_node/CMakeFiles/actionlib_msgs_generate_messages_py.dir/rule:
@@ -526,21 +406,6 @@ actionlib_msgs_generate_messages_py/fast:
 .PHONY : actionlib_msgs_generate_messages_py/fast
 
 # Convenience name for target.
-pixy_ros/pixy_node/CMakeFiles/pixy_node_generate_messages_nodejs.dir/rule:
-	cd /home/helios789/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 pixy_ros/pixy_node/CMakeFiles/pixy_node_generate_messages_nodejs.dir/rule
-.PHONY : pixy_ros/pixy_node/CMakeFiles/pixy_node_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-pixy_node_generate_messages_nodejs: pixy_ros/pixy_node/CMakeFiles/pixy_node_generate_messages_nodejs.dir/rule
-
-.PHONY : pixy_node_generate_messages_nodejs
-
-# fast build rule for target.
-pixy_node_generate_messages_nodejs/fast:
-	cd /home/helios789/catkin_ws/build && $(MAKE) -f pixy_ros/pixy_node/CMakeFiles/pixy_node_generate_messages_nodejs.dir/build.make pixy_ros/pixy_node/CMakeFiles/pixy_node_generate_messages_nodejs.dir/build
-.PHONY : pixy_node_generate_messages_nodejs/fast
-
-# Convenience name for target.
 pixy_ros/pixy_node/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/rule:
 	cd /home/helios789/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 pixy_ros/pixy_node/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/rule
 .PHONY : pixy_ros/pixy_node/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/rule
@@ -554,21 +419,6 @@ tf2_msgs_generate_messages_lisp: pixy_ros/pixy_node/CMakeFiles/tf2_msgs_generate
 tf2_msgs_generate_messages_lisp/fast:
 	cd /home/helios789/catkin_ws/build && $(MAKE) -f pixy_ros/pixy_node/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/build.make pixy_ros/pixy_node/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/build
 .PHONY : tf2_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-pixy_ros/pixy_node/CMakeFiles/pixy_node_genlisp.dir/rule:
-	cd /home/helios789/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 pixy_ros/pixy_node/CMakeFiles/pixy_node_genlisp.dir/rule
-.PHONY : pixy_ros/pixy_node/CMakeFiles/pixy_node_genlisp.dir/rule
-
-# Convenience name for target.
-pixy_node_genlisp: pixy_ros/pixy_node/CMakeFiles/pixy_node_genlisp.dir/rule
-
-.PHONY : pixy_node_genlisp
-
-# fast build rule for target.
-pixy_node_genlisp/fast:
-	cd /home/helios789/catkin_ws/build && $(MAKE) -f pixy_ros/pixy_node/CMakeFiles/pixy_node_genlisp.dir/build.make pixy_ros/pixy_node/CMakeFiles/pixy_node_genlisp.dir/build
-.PHONY : pixy_node_genlisp/fast
 
 # Convenience name for target.
 pixy_ros/pixy_node/CMakeFiles/tf_generate_messages_lisp.dir/rule:
@@ -630,36 +480,6 @@ tf2_msgs_generate_messages_py/fast:
 	cd /home/helios789/catkin_ws/build && $(MAKE) -f pixy_ros/pixy_node/CMakeFiles/tf2_msgs_generate_messages_py.dir/build.make pixy_ros/pixy_node/CMakeFiles/tf2_msgs_generate_messages_py.dir/build
 .PHONY : tf2_msgs_generate_messages_py/fast
 
-# Convenience name for target.
-pixy_ros/pixy_node/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/rule:
-	cd /home/helios789/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 pixy_ros/pixy_node/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/rule
-.PHONY : pixy_ros/pixy_node/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-actionlib_msgs_generate_messages_eus: pixy_ros/pixy_node/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/rule
-
-.PHONY : actionlib_msgs_generate_messages_eus
-
-# fast build rule for target.
-actionlib_msgs_generate_messages_eus/fast:
-	cd /home/helios789/catkin_ws/build && $(MAKE) -f pixy_ros/pixy_node/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/build.make pixy_ros/pixy_node/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/build
-.PHONY : actionlib_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-pixy_ros/pixy_node/CMakeFiles/pixy_node_generate_messages_cpp.dir/rule:
-	cd /home/helios789/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 pixy_ros/pixy_node/CMakeFiles/pixy_node_generate_messages_cpp.dir/rule
-.PHONY : pixy_ros/pixy_node/CMakeFiles/pixy_node_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-pixy_node_generate_messages_cpp: pixy_ros/pixy_node/CMakeFiles/pixy_node_generate_messages_cpp.dir/rule
-
-.PHONY : pixy_node_generate_messages_cpp
-
-# fast build rule for target.
-pixy_node_generate_messages_cpp/fast:
-	cd /home/helios789/catkin_ws/build && $(MAKE) -f pixy_ros/pixy_node/CMakeFiles/pixy_node_generate_messages_cpp.dir/build.make pixy_ros/pixy_node/CMakeFiles/pixy_node_generate_messages_cpp.dir/build
-.PHONY : pixy_node_generate_messages_cpp/fast
-
 src/pixy_node.o: src/pixy_node.cpp.o
 
 .PHONY : src/pixy_node.o
@@ -687,33 +507,6 @@ src/pixy_node.cpp.s:
 	cd /home/helios789/catkin_ws/build && $(MAKE) -f pixy_ros/pixy_node/CMakeFiles/pixy_node.dir/build.make pixy_ros/pixy_node/CMakeFiles/pixy_node.dir/src/pixy_node.cpp.s
 .PHONY : src/pixy_node.cpp.s
 
-src/pixy_sub.o: src/pixy_sub.cpp.o
-
-.PHONY : src/pixy_sub.o
-
-# target to build an object file
-src/pixy_sub.cpp.o:
-	cd /home/helios789/catkin_ws/build && $(MAKE) -f pixy_ros/pixy_node/CMakeFiles/pixy_sub.dir/build.make pixy_ros/pixy_node/CMakeFiles/pixy_sub.dir/src/pixy_sub.cpp.o
-.PHONY : src/pixy_sub.cpp.o
-
-src/pixy_sub.i: src/pixy_sub.cpp.i
-
-.PHONY : src/pixy_sub.i
-
-# target to preprocess a source file
-src/pixy_sub.cpp.i:
-	cd /home/helios789/catkin_ws/build && $(MAKE) -f pixy_ros/pixy_node/CMakeFiles/pixy_sub.dir/build.make pixy_ros/pixy_node/CMakeFiles/pixy_sub.dir/src/pixy_sub.cpp.i
-.PHONY : src/pixy_sub.cpp.i
-
-src/pixy_sub.s: src/pixy_sub.cpp.s
-
-.PHONY : src/pixy_sub.s
-
-# target to generate assembly for a file
-src/pixy_sub.cpp.s:
-	cd /home/helios789/catkin_ws/build && $(MAKE) -f pixy_ros/pixy_node/CMakeFiles/pixy_sub.dir/build.make pixy_ros/pixy_node/CMakeFiles/pixy_sub.dir/src/pixy_sub.cpp.s
-.PHONY : src/pixy_sub.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -721,17 +514,8 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... list_install_components"
-	@echo "... install/local"
-	@echo "... install/strip"
 	@echo "... test"
-	@echo "... pixy_sub"
-	@echo "... pixy_node"
-	@echo "... pixy_node_generate_messages_py"
-	@echo "... pixy_node_genpy"
-	@echo "... pixy_node_gennodejs"
-	@echo "... pixy_node_generate_messages_lisp"
-	@echo "... pixy_node_geneus"
-	@echo "... pixy_node_gencpp"
+	@echo "... install/local"
 	@echo "... actionlib_generate_messages_py"
 	@echo "... rebuild_cache"
 	@echo "... actionlib_generate_messages_nodejs"
@@ -741,31 +525,25 @@ help:
 	@echo "... tf2_msgs_generate_messages_cpp"
 	@echo "... actionlib_generate_messages_eus"
 	@echo "... tf_generate_messages_cpp"
-	@echo "... pixy_node_generate_messages_eus"
 	@echo "... tf_generate_messages_eus"
 	@echo "... actionlib_msgs_generate_messages_cpp"
 	@echo "... tf_generate_messages_nodejs"
+	@echo "... actionlib_msgs_generate_messages_eus"
 	@echo "... actionlib_generate_messages_cpp"
 	@echo "... actionlib_msgs_generate_messages_nodejs"
-	@echo "... pixy_node_generate_messages"
+	@echo "... pixy_node"
 	@echo "... actionlib_msgs_generate_messages_py"
-	@echo "... pixy_node_generate_messages_nodejs"
 	@echo "... tf2_msgs_generate_messages_lisp"
 	@echo "... edit_cache"
-	@echo "... pixy_node_genlisp"
 	@echo "... tf_generate_messages_lisp"
 	@echo "... tf2_msgs_generate_messages_nodejs"
 	@echo "... install"
 	@echo "... tf2_msgs_generate_messages_eus"
 	@echo "... tf2_msgs_generate_messages_py"
-	@echo "... actionlib_msgs_generate_messages_eus"
-	@echo "... pixy_node_generate_messages_cpp"
+	@echo "... install/strip"
 	@echo "... src/pixy_node.o"
 	@echo "... src/pixy_node.i"
 	@echo "... src/pixy_node.s"
-	@echo "... src/pixy_sub.o"
-	@echo "... src/pixy_sub.i"
-	@echo "... src/pixy_sub.s"
 .PHONY : help
 
 

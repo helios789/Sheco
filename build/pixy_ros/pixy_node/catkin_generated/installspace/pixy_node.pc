@@ -5,4 +5,4 @@ Description: Description of pixy_node
 Version: 1.0.0
 Cflags: -I/home/helios789/catkin_ws/install/include
 Libs: -L/home/helios789/catkin_ws/install/lib -lpixyusb
-Requires: std_msgs roscpp
+Requires: 

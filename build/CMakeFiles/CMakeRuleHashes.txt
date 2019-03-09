@@ -22,6 +22,7 @@ e9b17b9e826739fbd0a7e667230f32aa /home/helios789/catkin_ws/devel/share/common-li
 9a79dca01469654b13a4f1613349921b /home/helios789/catkin_ws/devel/share/gennodejs/ros/pixy_msgs/msg/Servo.js
 6ea6e9247dc3b90029221957b7513eac /home/helios789/catkin_ws/devel/share/gennodejs/ros/test/msg/MsgTutorial.js
 c4916702cf042d6f7adabe905db371eb /home/helios789/catkin_ws/devel/share/gennodejs/ros/test_service/srv/SrvTutorial.js
+4d641ccd8300b19f76dfdb9072c6413b /home/helios789/catkin_ws/devel/share/roseus/ros/openCV/manifest.l
 e2a099641cbfb26c168acf27e67b1e4e /home/helios789/catkin_ws/devel/share/roseus/ros/pixy_msgs/manifest.l
 6789a9ada9944e860e7a6d5efe61bb80 /home/helios789/catkin_ws/devel/share/roseus/ros/pixy_msgs/msg/PixyBlock.l
 b4f0fef7ab55ca04e838ff8c0c401bd7 /home/helios789/catkin_ws/devel/share/roseus/ros/pixy_msgs/msg/PixyData.l
@@ -32,6 +33,7 @@ f8bdbff9684f7f09fbe940592f287436 /home/helios789/catkin_ws/devel/share/roseus/ro
 998dded3e154003f1dbd208fca19c5b4 /home/helios789/catkin_ws/devel/share/roseus/ros/test_service/manifest.l
 6dccc9a82f7a1420f583e8ed18ba74df /home/helios789/catkin_ws/devel/share/roseus/ros/test_service/srv/SrvTutorial.l
 2de82011e86447b695c3e4d35f4a19f7 CMakeFiles/clean_test_results
+0818d2a88a7ea1e98b4b0fdaeb812e00 openCV/CMakeFiles/openCV_generate_messages_eus
 0cd27f9b5a053c3e0c63f96a01fe23b4 pixy_ros/pixy_msgs/CMakeFiles/_pixy_msgs_generate_messages_check_deps_PixyBlock
 b61ecd315cec3ae6ae8f6d40c81d8043 pixy_ros/pixy_msgs/CMakeFiles/_pixy_msgs_generate_messages_check_deps_PixyData
 ac859fec7a901312851189c476e33325 pixy_ros/pixy_msgs/CMakeFiles/_pixy_msgs_generate_messages_check_deps_Servo
@@ -40,7 +42,6 @@ ac859fec7a901312851189c476e33325 pixy_ros/pixy_msgs/CMakeFiles/_pixy_msgs_genera
 09aae29fc962d12544a2c91c6094daf8 pixy_ros/pixy_msgs/CMakeFiles/pixy_msgs_generate_messages_lisp
 09aae29fc962d12544a2c91c6094daf8 pixy_ros/pixy_msgs/CMakeFiles/pixy_msgs_generate_messages_nodejs
 09aae29fc962d12544a2c91c6094daf8 pixy_ros/pixy_msgs/CMakeFiles/pixy_msgs_generate_messages_py
-eadfe50793128527a42fed9e03bf79e0 pixy_ros/pixy_node/CMakeFiles/pixy_node_generate_messages_eus
 667d5f875c026f2019964b723ba3952a test/CMakeFiles/_test_generate_messages_check_deps_MsgTutorial
 0e2875b40e64f920cb41f2ba42ba7940 test/CMakeFiles/test_generate_messages_cpp
 0e2875b40e64f920cb41f2ba42ba7940 test/CMakeFiles/test_generate_messages_eus

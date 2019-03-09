@@ -152,7 +152,7 @@ foreach(library ${libraries})
   endif()
 endforeach()
 
-set(pixy_node_EXPORTED_TARGETS "pixy_node_generate_messages_cpp;pixy_node_generate_messages_eus;pixy_node_generate_messages_lisp;pixy_node_generate_messages_nodejs;pixy_node_generate_messages_py")
+set(pixy_node_EXPORTED_TARGETS "")
 # create dummy targets for exported code generation targets to make life of users easier
 foreach(t ${pixy_node_EXPORTED_TARGETS})
   if(NOT TARGET ${t})
@@ -160,7 +160,7 @@ foreach(t ${pixy_node_EXPORTED_TARGETS})
   endif()
 endforeach()
 
-set(depends "std_msgs;roscpp")
+set(depends "")
 foreach(depend ${depends})
   string(REPLACE " " ";" depend_list ${depend})
   # the package name of the dependency must be kept in a unique variable so that it is not overwritten in recursive calls
@@ -189,7 +189,7 @@ foreach(depend ${depends})
   list(APPEND pixy_node_EXPORTED_TARGETS ${${pixy_node_dep}_EXPORTED_TARGETS})
 endforeach()
 
-set(pkg_cfg_extras "pixy_node-msg-extras.cmake")
+set(pkg_cfg_extras "")
 foreach(extra ${pkg_cfg_extras})
   if(NOT IS_ABSOLUTE ${extra})
     set(extra ${pixy_node_DIR}/${extra})

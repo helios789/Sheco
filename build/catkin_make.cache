@@ -1,2 +1,2 @@
-pixy_ros/pixy_msgs:pixy_ros/pixy_node:pixy_ros/pixy_ros:test:test_service
+openCV:pixy_ros/pixy_msgs:pixy_ros/pixy_node:pixy_ros/pixy_ros:test:test_service:usb_cam
 -DCATKIN_DEVEL_PREFIX=/home/helios789/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/helios789/catkin_ws/install -G Unix Makefiles

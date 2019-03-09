@@ -1,0 +1,8 @@
+prefix=/home/helios789/catkin_ws/devel
+
+Name: pixy_msgs
+Description: Description of pixy_msgs
+Version: 1.0.0
+Cflags: -I/home/helios789/catkin_ws/devel/include
+Libs: -L/home/helios789/catkin_ws/devel/lib 
+Requires: message_runtime sensor_msgs

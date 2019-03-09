@@ -100,6 +100,17 @@ test/fast: test
 
 .PHONY : test/fast
 
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: install/local
+
+.PHONY : install/local/fast
+
 # Special rule for the target install/strip
 install/strip: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
@@ -121,17 +132,6 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
-
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: install/local
-
-.PHONY : install/local/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -241,21 +241,6 @@ test_genlisp/fast:
 .PHONY : test_genlisp/fast
 
 # Convenience name for target.
-test/CMakeFiles/test_generate_messages_lisp.dir/rule:
-	cd /home/helios789/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 test/CMakeFiles/test_generate_messages_lisp.dir/rule
-.PHONY : test/CMakeFiles/test_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-test_generate_messages_lisp: test/CMakeFiles/test_generate_messages_lisp.dir/rule
-
-.PHONY : test_generate_messages_lisp
-
-# fast build rule for target.
-test_generate_messages_lisp/fast:
-	cd /home/helios789/catkin_ws/build && $(MAKE) -f test/CMakeFiles/test_generate_messages_lisp.dir/build.make test/CMakeFiles/test_generate_messages_lisp.dir/build
-.PHONY : test_generate_messages_lisp/fast
-
-# Convenience name for target.
 test/CMakeFiles/roscpp_generate_messages_eus.dir/rule:
 	cd /home/helios789/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 test/CMakeFiles/roscpp_generate_messages_eus.dir/rule
 .PHONY : test/CMakeFiles/roscpp_generate_messages_eus.dir/rule
@@ -331,21 +316,6 @@ roscpp_generate_messages_cpp/fast:
 .PHONY : roscpp_generate_messages_cpp/fast
 
 # Convenience name for target.
-test/CMakeFiles/std_msgs_generate_messages_py.dir/rule:
-	cd /home/helios789/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 test/CMakeFiles/std_msgs_generate_messages_py.dir/rule
-.PHONY : test/CMakeFiles/std_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-std_msgs_generate_messages_py: test/CMakeFiles/std_msgs_generate_messages_py.dir/rule
-
-.PHONY : std_msgs_generate_messages_py
-
-# fast build rule for target.
-std_msgs_generate_messages_py/fast:
-	cd /home/helios789/catkin_ws/build && $(MAKE) -f test/CMakeFiles/std_msgs_generate_messages_py.dir/build.make test/CMakeFiles/std_msgs_generate_messages_py.dir/build
-.PHONY : std_msgs_generate_messages_py/fast
-
-# Convenience name for target.
 test/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule:
 	cd /home/helios789/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 test/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
 .PHONY : test/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
@@ -359,21 +329,6 @@ std_msgs_generate_messages_nodejs: test/CMakeFiles/std_msgs_generate_messages_no
 std_msgs_generate_messages_nodejs/fast:
 	cd /home/helios789/catkin_ws/build && $(MAKE) -f test/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build.make test/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build
 .PHONY : std_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-test/CMakeFiles/_catkin_empty_exported_target.dir/rule:
-	cd /home/helios789/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 test/CMakeFiles/_catkin_empty_exported_target.dir/rule
-.PHONY : test/CMakeFiles/_catkin_empty_exported_target.dir/rule
-
-# Convenience name for target.
-_catkin_empty_exported_target: test/CMakeFiles/_catkin_empty_exported_target.dir/rule
-
-.PHONY : _catkin_empty_exported_target
-
-# fast build rule for target.
-_catkin_empty_exported_target/fast:
-	cd /home/helios789/catkin_ws/build && $(MAKE) -f test/CMakeFiles/_catkin_empty_exported_target.dir/build.make test/CMakeFiles/_catkin_empty_exported_target.dir/build
-.PHONY : _catkin_empty_exported_target/fast
 
 # Convenience name for target.
 test/CMakeFiles/test_generate_messages_nodejs.dir/rule:
@@ -436,21 +391,6 @@ _test_generate_messages_check_deps_MsgTutorial/fast:
 .PHONY : _test_generate_messages_check_deps_MsgTutorial/fast
 
 # Convenience name for target.
-test/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule:
-	cd /home/helios789/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 test/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
-.PHONY : test/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-std_msgs_generate_messages_lisp: test/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : std_msgs_generate_messages_lisp
-
-# fast build rule for target.
-std_msgs_generate_messages_lisp/fast:
-	cd /home/helios789/catkin_ws/build && $(MAKE) -f test/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make test/CMakeFiles/std_msgs_generate_messages_lisp.dir/build
-.PHONY : std_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
 test/CMakeFiles/roscpp_generate_messages_py.dir/rule:
 	cd /home/helios789/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 test/CMakeFiles/roscpp_generate_messages_py.dir/rule
 .PHONY : test/CMakeFiles/roscpp_generate_messages_py.dir/rule
@@ -479,6 +419,36 @@ rosgraph_msgs_generate_messages_eus: test/CMakeFiles/rosgraph_msgs_generate_mess
 rosgraph_msgs_generate_messages_eus/fast:
 	cd /home/helios789/catkin_ws/build && $(MAKE) -f test/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build.make test/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build
 .PHONY : rosgraph_msgs_generate_messages_eus/fast
+
+# Convenience name for target.
+test/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule:
+	cd /home/helios789/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 test/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
+.PHONY : test/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+std_msgs_generate_messages_lisp: test/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
+
+.PHONY : std_msgs_generate_messages_lisp
+
+# fast build rule for target.
+std_msgs_generate_messages_lisp/fast:
+	cd /home/helios789/catkin_ws/build && $(MAKE) -f test/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make test/CMakeFiles/std_msgs_generate_messages_lisp.dir/build
+.PHONY : std_msgs_generate_messages_lisp/fast
+
+# Convenience name for target.
+test/CMakeFiles/std_msgs_generate_messages_py.dir/rule:
+	cd /home/helios789/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 test/CMakeFiles/std_msgs_generate_messages_py.dir/rule
+.PHONY : test/CMakeFiles/std_msgs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+std_msgs_generate_messages_py: test/CMakeFiles/std_msgs_generate_messages_py.dir/rule
+
+.PHONY : std_msgs_generate_messages_py
+
+# fast build rule for target.
+std_msgs_generate_messages_py/fast:
+	cd /home/helios789/catkin_ws/build && $(MAKE) -f test/CMakeFiles/std_msgs_generate_messages_py.dir/build.make test/CMakeFiles/std_msgs_generate_messages_py.dir/build
+.PHONY : std_msgs_generate_messages_py/fast
 
 # Convenience name for target.
 test/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule:
@@ -615,6 +585,21 @@ test_generate_messages_eus/fast:
 	cd /home/helios789/catkin_ws/build && $(MAKE) -f test/CMakeFiles/test_generate_messages_eus.dir/build.make test/CMakeFiles/test_generate_messages_eus.dir/build
 .PHONY : test_generate_messages_eus/fast
 
+# Convenience name for target.
+test/CMakeFiles/test_generate_messages_lisp.dir/rule:
+	cd /home/helios789/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 test/CMakeFiles/test_generate_messages_lisp.dir/rule
+.PHONY : test/CMakeFiles/test_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+test_generate_messages_lisp: test/CMakeFiles/test_generate_messages_lisp.dir/rule
+
+.PHONY : test_generate_messages_lisp
+
+# fast build rule for target.
+test_generate_messages_lisp/fast:
+	cd /home/helios789/catkin_ws/build && $(MAKE) -f test/CMakeFiles/test_generate_messages_lisp.dir/build.make test/CMakeFiles/test_generate_messages_lisp.dir/build
+.PHONY : test_generate_messages_lisp/fast
+
 src/topic_pub.o: src/topic_pub.cpp.o
 
 .PHONY : src/topic_pub.o
@@ -679,30 +664,28 @@ help:
 	@echo "... install"
 	@echo "... rebuild_cache"
 	@echo "... test"
+	@echo "... install/local"
 	@echo "... install/strip"
 	@echo "... topic_subscriber"
 	@echo "... test_genpy"
 	@echo "... test_generate_messages_py"
 	@echo "... test_gennodejs"
 	@echo "... test_genlisp"
-	@echo "... test_generate_messages_lisp"
 	@echo "... roscpp_generate_messages_eus"
 	@echo "... test_gencpp"
 	@echo "... edit_cache"
 	@echo "... topic_publisher"
 	@echo "... test_geneus"
 	@echo "... roscpp_generate_messages_cpp"
-	@echo "... std_msgs_generate_messages_py"
 	@echo "... std_msgs_generate_messages_nodejs"
-	@echo "... install/local"
-	@echo "... _catkin_empty_exported_target"
 	@echo "... test_generate_messages_nodejs"
 	@echo "... roscpp_generate_messages_lisp"
 	@echo "... std_msgs_generate_messages_eus"
 	@echo "... _test_generate_messages_check_deps_MsgTutorial"
-	@echo "... std_msgs_generate_messages_lisp"
 	@echo "... roscpp_generate_messages_py"
 	@echo "... rosgraph_msgs_generate_messages_eus"
+	@echo "... std_msgs_generate_messages_lisp"
+	@echo "... std_msgs_generate_messages_py"
 	@echo "... std_msgs_generate_messages_cpp"
 	@echo "... rosgraph_msgs_generate_messages_cpp"
 	@echo "... roscpp_generate_messages_nodejs"
@@ -712,6 +695,7 @@ help:
 	@echo "... test_generate_messages"
 	@echo "... test_generate_messages_cpp"
 	@echo "... test_generate_messages_eus"
+	@echo "... test_generate_messages_lisp"
 	@echo "... src/topic_pub.o"
 	@echo "... src/topic_pub.i"
 	@echo "... src/topic_pub.s"

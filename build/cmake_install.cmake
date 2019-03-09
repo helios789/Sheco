@@ -117,8 +117,11 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/helios789/catkin_ws/build/gtest/cmake_install.cmake")
+  include("/home/helios789/catkin_ws/build/pixy_ros/pixy_ros/cmake_install.cmake")
   include("/home/helios789/catkin_ws/build/test/cmake_install.cmake")
   include("/home/helios789/catkin_ws/build/test_service/cmake_install.cmake")
+  include("/home/helios789/catkin_ws/build/pixy_ros/pixy_msgs/cmake_install.cmake")
+  include("/home/helios789/catkin_ws/build/pixy_ros/pixy_node/cmake_install.cmake")
 
 endif()
 

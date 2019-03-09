@@ -21,6 +21,8 @@ opencv2/core.hpp
 -
 opencv2/opencv.hpp
 -
+stdlib.h
+-
 
 /opt/ros/kinetic/include/cv_bridge/cv_bridge.h
 sensor_msgs/Image.h

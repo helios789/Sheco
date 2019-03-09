@@ -6,39 +6,53 @@
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/core.hpp>
 #include <opencv2/opencv.hpp>
-
-int main(int argc, char **argv)
+#include <stdlib.h>
+int main( int argc, char** argv )
 {
-    ros::init(argc, argv, "openCV");
-    cv::VideoCapture vc(0);
-    if(!vc.isOpened())
-    {
-        return -1;
+    // frame capture from webcam
+    cv::VideoCapture capture( 0 );
+  
+    // is camera opened?
+    if( !capture.isOpened() ) {
+        std::cerr << "Cannot open camera" << std::endl;
+        return 0;
     }
-    vc.set(CV_CAP_PROP_FRAME_WIDTH, 640);
-    vc.set(CV_CAP_PROP_FRAME_HEIGHT, 480);
-    
-    cv::Mat img;
-    cv::Mat fliped_img; 
-    while(1)
-    {
-        vc >> img;
-
-        if(img.empty())
-            break;
-        
-        cv::imshow("cam", img);
-        
-        cv::flip(img, fliped_img, 1); //영상 좌우 반전하기
-        cv::imshow("flip", fliped_img);
-
-        if(cv::waitKey(10) == 27)
-            break;
-
-        ROS_INFO("hello OpenCV!");
+ 
+    // create a window
+    cv::namedWindow( "Webcam", 1 );
+ 
+    // while loop for image capture from webcam
+    while( true ) {
+        bool frame_valid = true;
+  
+        cv::Mat frame;
+        cv::Mat gray;
+  
+        try {
+            // get a new frame from webcam
+            capture >> frame;
+ 
+            // convert RGB image to gray
+            cv::cvtColor( frame, gray, CV_RGB2GRAY );
+        }
+        catch( cv::Exception& e ) {
+            std::cerr << "Exception occurred. Ignoring frame... " << e.err << std::endl;
+            frame_valid = false;
+        }
+ 
+        if ( frame_valid ) {
+            try {
+                // print the output
+                cv::imshow( "Webcam", gray );
+            }
+            catch( cv::Exception& e ) {
+                std::cerr << "Exception occurred. Ignoring frame... " << e.err << std::endl;
+            }
+        }
+ 
+        if ( cv::waitKey( 30 ) >= 0 ) break;
     }
-    cv::destroyAllWindows();
-   
-    
+ 
+ 
     return 0;
 }

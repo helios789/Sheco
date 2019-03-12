@@ -10,19 +10,11 @@
 ros/ros.h
 /home/helios789/catkin_ws/src/openCV/src/ros/ros.h
 cv_bridge/cv_bridge.h
--
-iostream
--
-opencv2/videoio.hpp
--
+/home/helios789/catkin_ws/src/openCV/src/cv_bridge/cv_bridge.h
 opencv2/highgui/highgui.hpp
--
-opencv2/core.hpp
--
-opencv2/opencv.hpp
--
-stdlib.h
--
+/home/helios789/catkin_ws/src/openCV/src/opencv2/highgui/highgui.hpp
+opencv2/imgproc/imgproc.hpp
+/home/helios789/catkin_ws/src/openCV/src/opencv2/imgproc/imgproc.hpp
 
 /opt/ros/kinetic/include/cv_bridge/cv_bridge.h
 sensor_msgs/Image.h

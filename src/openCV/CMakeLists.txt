@@ -10,8 +10,8 @@ find_package(catkin REQUIRED COMPONENTS
  cv_bridge
  sensor_msgs
  image_transport
+ OpenCV
 )
-find_package(OpenCV REQUIRED)
 
 
 ## 의존하는 메시지를 설정하는 옵션이다.

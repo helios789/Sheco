@@ -285,6 +285,7 @@ set(CMAKE_DEPEND_INFO_FILES
   "openCV/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/DependInfo.cmake"
   "openCV/CMakeFiles/std_msgs_generate_messages_cpp.dir/DependInfo.cmake"
   "openCV/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/DependInfo.cmake"
+  "openCV/CMakeFiles/openCV_sub.dir/DependInfo.cmake"
   "openCV/CMakeFiles/roscpp_generate_messages_nodejs.dir/DependInfo.cmake"
   "openCV/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/DependInfo.cmake"
   "openCV/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/DependInfo.cmake"

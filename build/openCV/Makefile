@@ -631,6 +631,21 @@ rosgraph_msgs_generate_messages_cpp/fast:
 .PHONY : rosgraph_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
+openCV/CMakeFiles/openCV_sub.dir/rule:
+	cd /home/helios789/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 openCV/CMakeFiles/openCV_sub.dir/rule
+.PHONY : openCV/CMakeFiles/openCV_sub.dir/rule
+
+# Convenience name for target.
+openCV_sub: openCV/CMakeFiles/openCV_sub.dir/rule
+
+.PHONY : openCV_sub
+
+# fast build rule for target.
+openCV_sub/fast:
+	cd /home/helios789/catkin_ws/build && $(MAKE) -f openCV/CMakeFiles/openCV_sub.dir/build.make openCV/CMakeFiles/openCV_sub.dir/build
+.PHONY : openCV_sub/fast
+
+# Convenience name for target.
 openCV/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule:
 	cd /home/helios789/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 openCV/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
 .PHONY : openCV/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
@@ -762,6 +777,33 @@ src/openCV.cpp.s:
 	cd /home/helios789/catkin_ws/build && $(MAKE) -f openCV/CMakeFiles/openCV.dir/build.make openCV/CMakeFiles/openCV.dir/src/openCV.cpp.s
 .PHONY : src/openCV.cpp.s
 
+src/openCV_sub.o: src/openCV_sub.cpp.o
+
+.PHONY : src/openCV_sub.o
+
+# target to build an object file
+src/openCV_sub.cpp.o:
+	cd /home/helios789/catkin_ws/build && $(MAKE) -f openCV/CMakeFiles/openCV_sub.dir/build.make openCV/CMakeFiles/openCV_sub.dir/src/openCV_sub.cpp.o
+.PHONY : src/openCV_sub.cpp.o
+
+src/openCV_sub.i: src/openCV_sub.cpp.i
+
+.PHONY : src/openCV_sub.i
+
+# target to preprocess a source file
+src/openCV_sub.cpp.i:
+	cd /home/helios789/catkin_ws/build && $(MAKE) -f openCV/CMakeFiles/openCV_sub.dir/build.make openCV/CMakeFiles/openCV_sub.dir/src/openCV_sub.cpp.i
+.PHONY : src/openCV_sub.cpp.i
+
+src/openCV_sub.s: src/openCV_sub.cpp.s
+
+.PHONY : src/openCV_sub.s
+
+# target to generate assembly for a file
+src/openCV_sub.cpp.s:
+	cd /home/helios789/catkin_ws/build && $(MAKE) -f openCV/CMakeFiles/openCV_sub.dir/build.make openCV/CMakeFiles/openCV_sub.dir/src/openCV_sub.cpp.s
+.PHONY : src/openCV_sub.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -805,6 +847,7 @@ help:
 	@echo "... sensor_msgs_generate_messages_nodejs"
 	@echo "... std_msgs_generate_messages_cpp"
 	@echo "... rosgraph_msgs_generate_messages_cpp"
+	@echo "... openCV_sub"
 	@echo "... roscpp_generate_messages_nodejs"
 	@echo "... rosgraph_msgs_generate_messages_py"
 	@echo "... rosgraph_msgs_generate_messages_lisp"
@@ -816,6 +859,9 @@ help:
 	@echo "... src/openCV.o"
 	@echo "... src/openCV.i"
 	@echo "... src/openCV.s"
+	@echo "... src/openCV_sub.o"
+	@echo "... src/openCV_sub.i"
+	@echo "... src/openCV_sub.s"
 .PHONY : help
 
 

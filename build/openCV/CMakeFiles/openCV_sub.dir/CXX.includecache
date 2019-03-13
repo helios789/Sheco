@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/helios789/catkin_ws/src/openCV/src/openCV.cpp
+/home/helios789/catkin_ws/src/openCV/src/openCV_sub.cpp
 ros/ros.h
 /home/helios789/catkin_ws/src/openCV/src/ros/ros.h
 cv_bridge/cv_bridge.h

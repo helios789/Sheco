@@ -686,6 +686,19 @@ rosgraph_msgs_generate_messages_cpp/fast:
 .PHONY : rosgraph_msgs_generate_messages_cpp/fast
 
 #=============================================================================
+# Target rules for targets named openCV_sub
+
+# Build rule for target.
+openCV_sub: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 openCV_sub
+.PHONY : openCV_sub
+
+# fast build rule for target.
+openCV_sub/fast:
+	$(MAKE) -f openCV/CMakeFiles/openCV_sub.dir/build.make openCV/CMakeFiles/openCV_sub.dir/build
+.PHONY : openCV_sub/fast
+
+#=============================================================================
 # Target rules for targets named roscpp_generate_messages_nodejs
 
 # Build rule for target.
@@ -1284,6 +1297,7 @@ help:
 	@echo "... sensor_msgs_generate_messages_nodejs"
 	@echo "... std_msgs_generate_messages_cpp"
 	@echo "... rosgraph_msgs_generate_messages_cpp"
+	@echo "... openCV_sub"
 	@echo "... roscpp_generate_messages_nodejs"
 	@echo "... rosgraph_msgs_generate_messages_py"
 	@echo "... rosgraph_msgs_generate_messages_lisp"

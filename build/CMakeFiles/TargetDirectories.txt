@@ -65,6 +65,7 @@
 /home/helios789/catkin_ws/build/openCV/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir
 /home/helios789/catkin_ws/build/openCV/CMakeFiles/std_msgs_generate_messages_cpp.dir
 /home/helios789/catkin_ws/build/openCV/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir
+/home/helios789/catkin_ws/build/openCV/CMakeFiles/openCV_sub.dir
 /home/helios789/catkin_ws/build/openCV/CMakeFiles/roscpp_generate_messages_nodejs.dir
 /home/helios789/catkin_ws/build/openCV/CMakeFiles/rosgraph_msgs_generate_messages_py.dir
 /home/helios789/catkin_ws/build/openCV/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir

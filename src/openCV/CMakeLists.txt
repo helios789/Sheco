@@ -33,3 +33,8 @@ add_executable(openCV src/openCV.cpp)
 add_dependencies(openCV ${${PROJECT_NAME}_EXPORTED_TARGETS}
 ${catkin_EXPORTED_TARGETS})
 target_link_libraries(openCV ${catkin_LIBRARIES} ${OpenCV_LIBS})
+
+add_executable(openCV_sub src/openCV_sub.cpp)
+add_dependencies(openCV_sub ${${PROJECT_NAME}_EXPORTED_TARGETS}
+${catkin_EXPORTED_TARGETS})
+target_link_libraries(openCV_sub ${catkin_LIBRARIES} ${OpenCV_LIBS})

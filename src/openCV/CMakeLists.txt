@@ -29,12 +29,17 @@ include_directories(${catkin_INCLUDE_DIRS} ${OpenCV_INCLUDE_DIRS})
 
 ## topic_publisher 노드에 대한 빌드 옵션이다.
 ## 실행 파일, 타깃 링크 라이브러리, 추가 의존성 등을 설정한다.
-add_executable(openCV src/openCV.cpp)
-add_dependencies(openCV ${${PROJECT_NAME}_EXPORTED_TARGETS}
+add_executable(openCV_pub src/openCV_pub.cpp)
+add_dependencies(openCV_pub ${${PROJECT_NAME}_EXPORTED_TARGETS}
 ${catkin_EXPORTED_TARGETS})
-target_link_libraries(openCV ${catkin_LIBRARIES} ${OpenCV_LIBS})
+target_link_libraries(openCV_pub ${catkin_LIBRARIES} ${OpenCV_LIBS})
 
 add_executable(openCV_sub src/openCV_sub.cpp)
 add_dependencies(openCV_sub ${${PROJECT_NAME}_EXPORTED_TARGETS}
 ${catkin_EXPORTED_TARGETS})
 target_link_libraries(openCV_sub ${catkin_LIBRARIES} ${OpenCV_LIBS})
+
+add_executable(openCV_img src/openCV_img.cpp)
+add_dependencies(openCV_img ${${PROJECT_NAME}_EXPORTED_TARGETS}
+${catkin_EXPORTED_TARGETS})
+target_link_libraries(openCV_img ${catkin_LIBRARIES} ${OpenCV_LIBS})

@@ -11,8 +11,12 @@ using namespace cv;
 
 void msgCallback(const std_msgs::Float32MultiArray::ConstPtr& msg)
 {
-    ROS_INFO("hi");
+    ROS_INFO("---------");
 
+    for(int i = 0; i < 32; i++)
+        ROS_INFO("%4f", msg->data[i]);
+
+    ROS_INFO("---------");
 }
 
 int main(int argc, char **argv)

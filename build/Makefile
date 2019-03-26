@@ -387,32 +387,6 @@ rosgraph_msgs_generate_messages_cpp/fast:
 .PHONY : rosgraph_msgs_generate_messages_cpp/fast
 
 #=============================================================================
-# Target rules for targets named sensor_msgs_generate_messages_eus
-
-# Build rule for target.
-sensor_msgs_generate_messages_eus: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 sensor_msgs_generate_messages_eus
-.PHONY : sensor_msgs_generate_messages_eus
-
-# fast build rule for target.
-sensor_msgs_generate_messages_eus/fast:
-	$(MAKE) -f openCV/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make openCV/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build
-.PHONY : sensor_msgs_generate_messages_eus/fast
-
-#=============================================================================
-# Target rules for targets named std_msgs_generate_messages_cpp
-
-# Build rule for target.
-std_msgs_generate_messages_cpp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 std_msgs_generate_messages_cpp
-.PHONY : std_msgs_generate_messages_cpp
-
-# fast build rule for target.
-std_msgs_generate_messages_cpp/fast:
-	$(MAKE) -f openCV/CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make openCV/CMakeFiles/std_msgs_generate_messages_cpp.dir/build
-.PHONY : std_msgs_generate_messages_cpp/fast
-
-#=============================================================================
 # Target rules for targets named sensor_msgs_generate_messages_nodejs
 
 # Build rule for target.
@@ -450,6 +424,58 @@ roscpp_generate_messages_py: cmake_check_build_system
 roscpp_generate_messages_py/fast:
 	$(MAKE) -f openCV/CMakeFiles/roscpp_generate_messages_py.dir/build.make openCV/CMakeFiles/roscpp_generate_messages_py.dir/build
 .PHONY : roscpp_generate_messages_py/fast
+
+#=============================================================================
+# Target rules for targets named sensor_msgs_generate_messages_eus
+
+# Build rule for target.
+sensor_msgs_generate_messages_eus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 sensor_msgs_generate_messages_eus
+.PHONY : sensor_msgs_generate_messages_eus
+
+# fast build rule for target.
+sensor_msgs_generate_messages_eus/fast:
+	$(MAKE) -f openCV/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make openCV/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build
+.PHONY : sensor_msgs_generate_messages_eus/fast
+
+#=============================================================================
+# Target rules for targets named std_msgs_generate_messages_cpp
+
+# Build rule for target.
+std_msgs_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 std_msgs_generate_messages_cpp
+.PHONY : std_msgs_generate_messages_cpp
+
+# fast build rule for target.
+std_msgs_generate_messages_cpp/fast:
+	$(MAKE) -f openCV/CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make openCV/CMakeFiles/std_msgs_generate_messages_cpp.dir/build
+.PHONY : std_msgs_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named openCV_IRcamSub
+
+# Build rule for target.
+openCV_IRcamSub: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 openCV_IRcamSub
+.PHONY : openCV_IRcamSub
+
+# fast build rule for target.
+openCV_IRcamSub/fast:
+	$(MAKE) -f openCV/CMakeFiles/openCV_IRcamSub.dir/build.make openCV/CMakeFiles/openCV_IRcamSub.dir/build
+.PHONY : openCV_IRcamSub/fast
+
+#=============================================================================
+# Target rules for targets named std_msgs_generate_messages_lisp
+
+# Build rule for target.
+std_msgs_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 std_msgs_generate_messages_lisp
+.PHONY : std_msgs_generate_messages_lisp
+
+# fast build rule for target.
+std_msgs_generate_messages_lisp/fast:
+	$(MAKE) -f openCV/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make openCV/CMakeFiles/std_msgs_generate_messages_lisp.dir/build
+.PHONY : std_msgs_generate_messages_lisp/fast
 
 #=============================================================================
 # Target rules for targets named geometry_msgs_generate_messages_lisp
@@ -723,19 +749,6 @@ openCV_genpy: cmake_check_build_system
 openCV_genpy/fast:
 	$(MAKE) -f openCV/CMakeFiles/openCV_genpy.dir/build.make openCV/CMakeFiles/openCV_genpy.dir/build
 .PHONY : openCV_genpy/fast
-
-#=============================================================================
-# Target rules for targets named std_msgs_generate_messages_lisp
-
-# Build rule for target.
-std_msgs_generate_messages_lisp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 std_msgs_generate_messages_lisp
-.PHONY : std_msgs_generate_messages_lisp
-
-# fast build rule for target.
-std_msgs_generate_messages_lisp/fast:
-	$(MAKE) -f openCV/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make openCV/CMakeFiles/std_msgs_generate_messages_lisp.dir/build
-.PHONY : std_msgs_generate_messages_lisp/fast
 
 #=============================================================================
 # Target rules for targets named roscpp_generate_messages_lisp
@@ -1287,11 +1300,13 @@ help:
 	@echo "... roscpp_generate_messages_nodejs"
 	@echo "... openCV_sub"
 	@echo "... rosgraph_msgs_generate_messages_cpp"
-	@echo "... sensor_msgs_generate_messages_eus"
-	@echo "... std_msgs_generate_messages_cpp"
 	@echo "... sensor_msgs_generate_messages_nodejs"
 	@echo "... rosgraph_msgs_generate_messages_eus"
 	@echo "... roscpp_generate_messages_py"
+	@echo "... sensor_msgs_generate_messages_eus"
+	@echo "... std_msgs_generate_messages_cpp"
+	@echo "... openCV_IRcamSub"
+	@echo "... std_msgs_generate_messages_lisp"
 	@echo "... geometry_msgs_generate_messages_lisp"
 	@echo "... std_msgs_generate_messages_eus"
 	@echo "... sensor_msgs_generate_messages_lisp"
@@ -1313,7 +1328,6 @@ help:
 	@echo "... openCV_gennodejs"
 	@echo "... openCV_generate_messages_py"
 	@echo "... openCV_genpy"
-	@echo "... std_msgs_generate_messages_lisp"
 	@echo "... roscpp_generate_messages_lisp"
 	@echo "... openCV_pub"
 	@echo "... openCV_img"

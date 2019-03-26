@@ -43,3 +43,8 @@ add_executable(openCV_img src/openCV_img.cpp)
 add_dependencies(openCV_img ${${PROJECT_NAME}_EXPORTED_TARGETS}
 ${catkin_EXPORTED_TARGETS})
 target_link_libraries(openCV_img ${catkin_LIBRARIES} ${OpenCV_LIBS})
+
+add_executable(openCV_IRcamSub src/openCV_IRcamSub.cpp)
+add_dependencies(openCV_IRcamSub ${${PROJECT_NAME}_EXPORTED_TARGETS}
+${catkin_EXPORTED_TARGETS})
+target_link_libraries(openCV_IRcamSub ${catkin_LIBRARIES} ${OpenCV_LIBS})

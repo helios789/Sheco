@@ -56,6 +56,18 @@ CMAKE_BINARY_DIR = /home/helios789/catkin_ws/build
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
+
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
@@ -87,18 +99,6 @@ install/strip: preinstall
 install/strip/fast: install/strip
 
 .PHONY : install/strip/fast
-
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install
-
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
 
 # Special rule for the target test
 test:
@@ -286,36 +286,6 @@ rosgraph_msgs_generate_messages_cpp/fast:
 .PHONY : rosgraph_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
-openCV/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule:
-	cd /home/helios789/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 openCV/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
-.PHONY : openCV/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-sensor_msgs_generate_messages_eus: openCV/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
-
-.PHONY : sensor_msgs_generate_messages_eus
-
-# fast build rule for target.
-sensor_msgs_generate_messages_eus/fast:
-	cd /home/helios789/catkin_ws/build && $(MAKE) -f openCV/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make openCV/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build
-.PHONY : sensor_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-openCV/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule:
-	cd /home/helios789/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 openCV/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
-.PHONY : openCV/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-std_msgs_generate_messages_cpp: openCV/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : std_msgs_generate_messages_cpp
-
-# fast build rule for target.
-std_msgs_generate_messages_cpp/fast:
-	cd /home/helios789/catkin_ws/build && $(MAKE) -f openCV/CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make openCV/CMakeFiles/std_msgs_generate_messages_cpp.dir/build
-.PHONY : std_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
 openCV/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule:
 	cd /home/helios789/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 openCV/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
 .PHONY : openCV/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
@@ -359,6 +329,66 @@ roscpp_generate_messages_py: openCV/CMakeFiles/roscpp_generate_messages_py.dir/r
 roscpp_generate_messages_py/fast:
 	cd /home/helios789/catkin_ws/build && $(MAKE) -f openCV/CMakeFiles/roscpp_generate_messages_py.dir/build.make openCV/CMakeFiles/roscpp_generate_messages_py.dir/build
 .PHONY : roscpp_generate_messages_py/fast
+
+# Convenience name for target.
+openCV/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule:
+	cd /home/helios789/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 openCV/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
+.PHONY : openCV/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+sensor_msgs_generate_messages_eus: openCV/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
+
+.PHONY : sensor_msgs_generate_messages_eus
+
+# fast build rule for target.
+sensor_msgs_generate_messages_eus/fast:
+	cd /home/helios789/catkin_ws/build && $(MAKE) -f openCV/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make openCV/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build
+.PHONY : sensor_msgs_generate_messages_eus/fast
+
+# Convenience name for target.
+openCV/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule:
+	cd /home/helios789/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 openCV/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
+.PHONY : openCV/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+std_msgs_generate_messages_cpp: openCV/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
+
+.PHONY : std_msgs_generate_messages_cpp
+
+# fast build rule for target.
+std_msgs_generate_messages_cpp/fast:
+	cd /home/helios789/catkin_ws/build && $(MAKE) -f openCV/CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make openCV/CMakeFiles/std_msgs_generate_messages_cpp.dir/build
+.PHONY : std_msgs_generate_messages_cpp/fast
+
+# Convenience name for target.
+openCV/CMakeFiles/openCV_IRcamSub.dir/rule:
+	cd /home/helios789/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 openCV/CMakeFiles/openCV_IRcamSub.dir/rule
+.PHONY : openCV/CMakeFiles/openCV_IRcamSub.dir/rule
+
+# Convenience name for target.
+openCV_IRcamSub: openCV/CMakeFiles/openCV_IRcamSub.dir/rule
+
+.PHONY : openCV_IRcamSub
+
+# fast build rule for target.
+openCV_IRcamSub/fast:
+	cd /home/helios789/catkin_ws/build && $(MAKE) -f openCV/CMakeFiles/openCV_IRcamSub.dir/build.make openCV/CMakeFiles/openCV_IRcamSub.dir/build
+.PHONY : openCV_IRcamSub/fast
+
+# Convenience name for target.
+openCV/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule:
+	cd /home/helios789/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 openCV/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
+.PHONY : openCV/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+std_msgs_generate_messages_lisp: openCV/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
+
+.PHONY : std_msgs_generate_messages_lisp
+
+# fast build rule for target.
+std_msgs_generate_messages_lisp/fast:
+	cd /home/helios789/catkin_ws/build && $(MAKE) -f openCV/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make openCV/CMakeFiles/std_msgs_generate_messages_lisp.dir/build
+.PHONY : std_msgs_generate_messages_lisp/fast
 
 # Convenience name for target.
 openCV/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule:
@@ -676,21 +706,6 @@ openCV_genpy/fast:
 .PHONY : openCV_genpy/fast
 
 # Convenience name for target.
-openCV/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule:
-	cd /home/helios789/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 openCV/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
-.PHONY : openCV/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-std_msgs_generate_messages_lisp: openCV/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : std_msgs_generate_messages_lisp
-
-# fast build rule for target.
-std_msgs_generate_messages_lisp/fast:
-	cd /home/helios789/catkin_ws/build && $(MAKE) -f openCV/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make openCV/CMakeFiles/std_msgs_generate_messages_lisp.dir/build
-.PHONY : std_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
 openCV/CMakeFiles/roscpp_generate_messages_lisp.dir/rule:
 	cd /home/helios789/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 openCV/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
 .PHONY : openCV/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
@@ -764,6 +779,33 @@ openCV_generate_messages_lisp: openCV/CMakeFiles/openCV_generate_messages_lisp.d
 openCV_generate_messages_lisp/fast:
 	cd /home/helios789/catkin_ws/build && $(MAKE) -f openCV/CMakeFiles/openCV_generate_messages_lisp.dir/build.make openCV/CMakeFiles/openCV_generate_messages_lisp.dir/build
 .PHONY : openCV_generate_messages_lisp/fast
+
+src/openCV_IRcamSub.o: src/openCV_IRcamSub.cpp.o
+
+.PHONY : src/openCV_IRcamSub.o
+
+# target to build an object file
+src/openCV_IRcamSub.cpp.o:
+	cd /home/helios789/catkin_ws/build && $(MAKE) -f openCV/CMakeFiles/openCV_IRcamSub.dir/build.make openCV/CMakeFiles/openCV_IRcamSub.dir/src/openCV_IRcamSub.cpp.o
+.PHONY : src/openCV_IRcamSub.cpp.o
+
+src/openCV_IRcamSub.i: src/openCV_IRcamSub.cpp.i
+
+.PHONY : src/openCV_IRcamSub.i
+
+# target to preprocess a source file
+src/openCV_IRcamSub.cpp.i:
+	cd /home/helios789/catkin_ws/build && $(MAKE) -f openCV/CMakeFiles/openCV_IRcamSub.dir/build.make openCV/CMakeFiles/openCV_IRcamSub.dir/src/openCV_IRcamSub.cpp.i
+.PHONY : src/openCV_IRcamSub.cpp.i
+
+src/openCV_IRcamSub.s: src/openCV_IRcamSub.cpp.s
+
+.PHONY : src/openCV_IRcamSub.s
+
+# target to generate assembly for a file
+src/openCV_IRcamSub.cpp.s:
+	cd /home/helios789/catkin_ws/build && $(MAKE) -f openCV/CMakeFiles/openCV_IRcamSub.dir/build.make openCV/CMakeFiles/openCV_IRcamSub.dir/src/openCV_IRcamSub.cpp.s
+.PHONY : src/openCV_IRcamSub.cpp.s
 
 src/openCV_img.o: src/openCV_img.cpp.o
 
@@ -860,11 +902,14 @@ help:
 	@echo "... roscpp_generate_messages_nodejs"
 	@echo "... openCV_sub"
 	@echo "... rosgraph_msgs_generate_messages_cpp"
-	@echo "... sensor_msgs_generate_messages_eus"
-	@echo "... std_msgs_generate_messages_cpp"
 	@echo "... sensor_msgs_generate_messages_nodejs"
 	@echo "... rosgraph_msgs_generate_messages_eus"
 	@echo "... roscpp_generate_messages_py"
+	@echo "... sensor_msgs_generate_messages_eus"
+	@echo "... std_msgs_generate_messages_cpp"
+	@echo "... openCV_IRcamSub"
+	@echo "... install"
+	@echo "... std_msgs_generate_messages_lisp"
 	@echo "... geometry_msgs_generate_messages_lisp"
 	@echo "... std_msgs_generate_messages_eus"
 	@echo "... sensor_msgs_generate_messages_lisp"
@@ -889,8 +934,6 @@ help:
 	@echo "... openCV_gennodejs"
 	@echo "... openCV_generate_messages_py"
 	@echo "... openCV_genpy"
-	@echo "... std_msgs_generate_messages_lisp"
-	@echo "... install"
 	@echo "... roscpp_generate_messages_lisp"
 	@echo "... openCV_pub"
 	@echo "... openCV_img"
@@ -899,6 +942,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... openCV_generate_messages_lisp"
 	@echo "... rebuild_cache"
+	@echo "... src/openCV_IRcamSub.o"
+	@echo "... src/openCV_IRcamSub.i"
+	@echo "... src/openCV_IRcamSub.s"
 	@echo "... src/openCV_img.o"
 	@echo "... src/openCV_img.i"
 	@echo "... src/openCV_img.s"

@@ -39,9 +39,6 @@ int main( int argc, char** argv )
 
     inRange(img_hsv_median_blurred, Scalar(100,0,0), Scalar(300,120,140), result);
 
-
-    // cvtColor(image_blurred_with_median, img_gray, COLOR_BGR2GRAY);cm
-
     // equalizeHist(img_gray, img_constrast);
 
     // threshold( img_gray, result, 100, 255, THRESH_BINARY );
@@ -57,9 +54,6 @@ int main( int argc, char** argv )
 
     namedWindow("Result", WINDOW_AUTOSIZE);
 	imshow("Result", result);
-
-    // namedWindow("Med", WINDOW_AUTOSIZE);
-	// imshow("Med", image_blurred_with_median);
 
     // namedWindow("Gauss", WINDOW_AUTOSIZE);
 	// imshow("Gauss", image_blurred_with_gauss);

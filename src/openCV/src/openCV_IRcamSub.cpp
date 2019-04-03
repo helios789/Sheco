@@ -15,7 +15,22 @@ const int MSG_ARRAY_COL = 32;
 const int MSG_ARRAY_LENGTH = 192;
 
 Mat tempMap(24, 32, CV_8UC1);
-Mat heatMap;
+Mat heatMap(24, 32, CV_8UC3);
+
+void makeHeatMap()
+{
+    for(int row = 0; row < 24; row++)
+    {
+        for(int col = 0; col < 32; col++)
+        {
+            // R, G, B
+            heatMap.at<Vec3b>(row, col)[0] = 0;
+            heatMap.at<Vec3b>(row, col)[1] = tempMap.at<unsigned char>(row, col) * 3;
+            heatMap.at<Vec3b>(row, col)[2] = 255;
+        }
+    }
+
+}
 
 void msgCallback1(const std_msgs::Float32MultiArray::ConstPtr& msg)
 {
@@ -27,20 +42,21 @@ void msgCallback1(const std_msgs::Float32MultiArray::ConstPtr& msg)
         int col = i % MSG_ARRAY_COL;
 
         tempMap.at<unsigned char>(row, col) = msg->data[i] * 4;
+        ROS_INFO("%f", msg->data[i]);
     }
 
-    applyColorMap(tempMap, heatMap, COLORMAP_HOT);
+    makeHeatMap();
 
     imshow( "HeatMap", heatMap );
 
-    waitKey(10);
+    waitKey(1);
 
     ROS_INFO("1---------");
 }
 
 void msgCallback2(const std_msgs::Float32MultiArray::ConstPtr& msg)
 {
-    ROS_INFO("2---------");
+    //ROS_INFO("2---------");
 
     for(int i = 0; i < MSG_ARRAY_LENGTH; i ++)
     {
@@ -50,19 +66,19 @@ void msgCallback2(const std_msgs::Float32MultiArray::ConstPtr& msg)
         tempMap.at<unsigned char>(row, col) = msg->data[i] * 4;
     }
 
-    applyColorMap(tempMap, heatMap, COLORMAP_HOT);
+    makeHeatMap();
 
     imshow( "HeatMap", heatMap );
 
-    waitKey(10);
+    waitKey(1);
 
-    ROS_INFO("2---------");
+    //ROS_INFO("2---------");
     
 }
 
 void msgCallback3(const std_msgs::Float32MultiArray::ConstPtr& msg)
 {
-    ROS_INFO("3---------");
+   // ROS_INFO("3---------");
 
     for(int i = 0; i < MSG_ARRAY_LENGTH; i ++)
     {
@@ -72,18 +88,18 @@ void msgCallback3(const std_msgs::Float32MultiArray::ConstPtr& msg)
         tempMap.at<unsigned char>(row, col) = msg->data[i] * 4;
     }
     
-    applyColorMap(tempMap, heatMap, COLORMAP_HOT);
+    makeHeatMap();
 
     imshow( "HeatMap", heatMap );
 
-    waitKey(10);
+    waitKey(1);
 
-    ROS_INFO("3---------");
+   //ROS_INFO("3---------");
 }
 
 void msgCallback4(const std_msgs::Float32MultiArray::ConstPtr& msg)
 {
-    ROS_INFO("4---------");
+    //ROS_INFO("4---------");
 
     for(int i = 0; i < MSG_ARRAY_LENGTH; i ++)
     {
@@ -93,13 +109,13 @@ void msgCallback4(const std_msgs::Float32MultiArray::ConstPtr& msg)
         tempMap.at<unsigned char>(row, col) = msg->data[i] * 4;
     }
     
-    applyColorMap(tempMap, heatMap, COLORMAP_HOT);
+    makeHeatMap();
 
     imshow( "HeatMap", heatMap );
 
-    waitKey(10);
+    waitKey(1);
 
-    ROS_INFO("4---------");
+    //ROS_INFO("4---------");
 
 }
 
